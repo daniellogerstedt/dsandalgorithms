@@ -14,3 +14,19 @@ It also only loops half of the length. Where n is the size of the array and time
 ### Solution
 Inline-style:
 ![solution image](./assets/reverseArray.jpg)
+
+##November 27th: Add a number to an array.
+
+### Challenge
+Add a number to an array.
+
+### Approach & Efficiency
+Uses a method to insert a number into an array in the numerical position.
+
+This approach is Big O(n) for space and O(n) for time because it creates a duplicate array containing the values and iterates through the entire array one time.
+
+### Solution
+Inline-style:
+![solution image](./assets/insertNumberPsuedo.jpg)
+Inline-style:
+![solution image](./assets/insertNumberCode.jpg)
