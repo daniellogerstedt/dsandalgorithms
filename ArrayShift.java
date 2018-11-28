@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class InsertNumberIntoArray {
+public class ArrayShift {
 
     /*  This first static is the main for execution of code.
      *  In this case it contains a declared number and array for testing and a system print line for execution of insertNumber method
