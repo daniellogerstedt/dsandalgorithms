@@ -8,7 +8,7 @@ public class ArrayReverse {
         arr1[2] = "c";
         arr1[3] = "d";
         System.out.println(Arrays.toString(arr1));
-        arr1 = reverse(arr1);
+        arr1 = reverseArray(arr1);
         System.out.println(Arrays.toString(arr1));
     }
 
