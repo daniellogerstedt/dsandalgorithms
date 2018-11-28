@@ -27,6 +27,7 @@ This approach is Big O(n) for space and O(n) for time because it creates a dupli
 
 ### Solution
 Inline-style:
-![solution image](./assets/insertNumberPsuedo.jpg)
+![solution image](./assets/insertNumberPseudo.jpg)
+
 Inline-style:
 ![solution image](./assets/insertNumberCode.jpg)
