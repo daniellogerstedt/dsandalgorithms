@@ -8,13 +8,13 @@ public class ArrayShift {
     public static void main (String[] args) {
         int N = 3;
         int[] testArr = new int[] {1, 2, 4, 5};
-        System.out.println(Arrays.toString(insertNumber(testArr, N)));
+        System.out.println(Arrays.toString(insertShiftArray(testArr, N)));
     }
 
     /*
         Below is the insertNumber method which takes a number and puts it into an array in numerical position.
      */
-    public static int[] insertNumber (int[] arr, int num) {
+    public static int[] insertShiftArray (int[] arr, int num) {
         int[] answerArray = new int[arr.length + 1];
         boolean inserted = false;
         for (int i = 0; i < arr.length; i++) {
