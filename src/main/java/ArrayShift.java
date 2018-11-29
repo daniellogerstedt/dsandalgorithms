@@ -18,7 +18,7 @@ public class ArrayShift {
         int[] answerArray = new int[arr.length + 1];
         boolean inserted = false;
         for (int i = 0; i < arr.length; i++) {
-            if (arr[i] > num && inserted == false) {
+            if (i == Math.ceil((double)arr.length/2) && inserted == false) {
                 answerArray[i] = num;
                 inserted = true;
             }

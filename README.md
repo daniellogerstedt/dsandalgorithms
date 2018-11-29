@@ -31,3 +31,21 @@ Inline-style:
 
 Inline-style:
 ![solution image](./assets/insertNumberCode.jpg)
+
+
+##November 27th: Add a number to an array.
+
+### Challenge
+Binary Search of an Array
+
+### Approach & Efficiency
+After reading up on Binary Search at on wikipedia (src: https://en.wikipedia.org/wiki/Binary_search_algorithm) I decided to rebuild the algorithm in from C to Java.
+
+This approach is Big O(1) for space and O(log n)
+It does not create a duplicate of the array and only uses minor space increases to store temporary integers in the search process
+The time used can be calculated on a logarithmic curve.
+
+### Solution
+Inline-style:
+![solution image](./assets/array_binary_search.jpg)
+
