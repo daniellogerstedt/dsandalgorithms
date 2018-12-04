@@ -12,7 +12,7 @@ This approach is Big O(1) for space and O(log n) for time because it creates spa
 It also only loops half of the length. Where n is the size of the array and time it takes to iterate over the entire array.
 
 ### Solution
-Inline-style:
+
 ![solution image](./assets/reverseArray.jpg)
 
 ##November 27th: Add a number to an array.
@@ -26,10 +26,9 @@ Uses a method to insert a number into an array in the numerical position.
 This approach is Big O(n) for space and O(n) for time because it creates a duplicate array containing the values and iterates through the entire array one time.
 
 ### Solution
-Inline-style:
+
 ![solution image](./assets/insertNumberPseudo.jpg)
 
-Inline-style:
 ![solution image](./assets/insertNumberCode.jpg)
 
 
@@ -46,13 +45,13 @@ It does not create a duplicate of the array and only uses minor space increases 
 The time used can be calculated on a logarithmic curve.
 
 ### Solution
-Inline-style:
+
 ![solution image](./assets/array_binary_search.jpg)
 
 
 
 
-##Decembere 3rd: Linked Lists.
+##December 3rd: Linked Lists.
 
 ### Challenge
 Implement a Linked List with 3 methods: insert, includes, and print
@@ -70,3 +69,30 @@ Searching starts at the head then checks the value of the node before setting th
 If it finds a value matching the requested value it returns true, otherwise it returns false when it reaches the end of the list.
 
 Printing the list starts at the head and sends the value of the node to the system out before setting the current node to the next node and repeating till the end.
+
+
+##December 4rd: Linked Lists.
+
+### Challenge
+Implement a Linked List methods to append at the end, insert before node with a value, insert after a node with value.
+
+### Approach & Efficiency
+Linked Lists append nodes at the head in O(n) time with O(1) space
+Inserting Before a Value is O(n) time with O(1) space
+Inserting After a Value is O(n) time with O(1) space
+
+Append first checks to see if head is null, it then iterates to the end of the list stopping on the last node and placing a new node of a given value after it.
+
+InsertBeforeValue iterates through the list stopping on the first node with a given value. While doing this it keeps track of the previous node and current node.
+It then places the new node between the previous node and the node found with the value requested.
+
+InsertAfterValue iterates through the list stopping on the first node with a given value. It then places the new node between the node found and the next node.
+
+### Solution
+![solution image](./assets/appendLL.jpg)
+
+![solution image](./assets/appendLL2.jpg)
+
+![solution image](./assets/insertBeforeValue.jpg)
+
+![solution image](./assets/insertAfterValue.jpg)

@@ -27,4 +27,34 @@ public class LinkedList {
             currentNode = currentNode.next;
         }
     }
+
+    public void append(int val) {
+        Node nNode = new Node(val);
+        if (this.head == null) this.head = nNode;
+        else {
+            Node currentNode = this.head;
+            while (currentNode.next != null) {
+                currentNode = currentNode.next;
+            }
+            currentNode.next = nNode;
+        }
+    }
+
+    public void insertBeforeValue(int befVal, int newVal) {
+        Node currentNode = this.head;
+        Node previousNode = null;
+        while (currentNode.value != befVal && currentNode != null) {
+            previousNode = currentNode;
+            currentNode = currentNode.next;
+        }
+        if (previousNode != null) previousNode.next = new Node(newVal, currentNode);
+    }
+
+    public void insertAfterValue(int aftVal, int newVal) {
+        Node currentNode = this.head;
+        while (currentNode.value != aftVal && currentNode != null) {
+            currentNode = currentNode.next;
+        }
+        currentNode.next = new Node(newVal, currentNode.next);
+    }
 }

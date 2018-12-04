@@ -62,7 +62,7 @@ public class LinkedListTest {
         testList.insert(53);
         assertTrue("Should be able to locate Nodes at the end of the list", testList.includes(5));
         assertTrue("Should be able to locate Nodes at the start of the list", testList.includes(53));
-        assertTrue("Should be able to locate Nodese in the middle of the list", testList.includes(42));
+        assertTrue("Should be able to locate Nodes in the middle of the list", testList.includes(42));
     }
 
     @Test
@@ -75,5 +75,38 @@ public class LinkedListTest {
         testList.print();
 
         assertEquals("Should print a list of numbers to System.out.println", "53\n42\n4\n5\n", outContent.toString());
+    }
+
+    @Test
+    public void testAppend() {
+        LinkedList testList = new LinkedList();
+        testList.append(5);
+        assertEquals("Should be able to locate Nodes at the end of the list", 5, testList.head.value);
+        testList.append(4);
+        assertEquals("Should be able to locate Nodes at the start of the list", 4, testList.head.next.value);
+        testList.append(53);
+        assertEquals("Should be able to locate Nodes in the middle of the list", 53, testList.head.next.next.value);
+    }
+
+    @Test
+    public void testInsertBeforeValue() {
+        LinkedList testList = new LinkedList();
+        testList.insert(53);
+        testList.insert(5);
+        testList.insertBeforeValue(53, 4);
+        assertEquals("5 should remain at the beginning of the list after 4 is inserted", 5, testList.head.value);
+        assertEquals("4 should be placed in the middle of the list after 5", 4, testList.head.next.value);
+        assertEquals("53 should remain at the end of the list after 4 is inserted", 53, testList.head.next.next.value);
+    }
+
+    @Test
+    public void testInsertAfterValue() {
+        LinkedList testList = new LinkedList();
+        testList.insert(53);
+        testList.insert(5);
+        testList.insertAfterValue(5, 4);
+        assertEquals("5 should remain at the beginning of the list after 4 is inserted", 5, testList.head.value);
+        assertEquals("4 should be placed in the middle of the list after 5", 4, testList.head.next.value);
+        assertEquals("53 should remain at the end of the list after 4 is inserted.", 53, testList.head.next.next.value);
     }
 }
