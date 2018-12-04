@@ -83,10 +83,10 @@ Inserting After a Value is O(n) time with O(1) space
 
 Append first checks to see if head is null, it then iterates to the end of the list stopping on the last node and placing a new node of a given value after it.
 
-InsertBeforeValue iterates through the list stopping on the first node with a given value. While doing this it keeps track of the previous node and current node.
+InsertBefore iterates through the list stopping on the first node with a given value. While doing this it keeps track of the previous node and current node.
 It then places the new node between the previous node and the node found with the value requested.
 
-InsertAfterValue iterates through the list stopping on the first node with a given value. It then places the new node between the node found and the next node.
+InsertAfter iterates through the list stopping on the first node with a given value. It then places the new node between the node found and the next node.
 
 ### Solution
 ![solution image](./assets/appendLL.jpg)

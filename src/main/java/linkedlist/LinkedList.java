@@ -40,21 +40,21 @@ public class LinkedList {
         }
     }
 
-    public void insertBeforeValue(int befVal, int newVal) {
+    public void insertBefore(int Value, int newValue) {
         Node currentNode = this.head;
         Node previousNode = null;
-        while (currentNode.value != befVal && currentNode != null) {
+        while (currentNode.value != Value && currentNode != null) {
             previousNode = currentNode;
             currentNode = currentNode.next;
         }
-        if (previousNode != null) previousNode.next = new Node(newVal, currentNode);
+        if (previousNode != null) previousNode.next = new Node(newValue, currentNode);
     }
 
-    public void insertAfterValue(int aftVal, int newVal) {
+    public void insertAfter(int Value, int newValue) {
         Node currentNode = this.head;
-        while (currentNode.value != aftVal && currentNode != null) {
+        while (currentNode.value != Value && currentNode != null) {
             currentNode = currentNode.next;
         }
-        currentNode.next = new Node(newVal, currentNode.next);
+        currentNode.next = new Node(newValue, currentNode.next);
     }
 }
