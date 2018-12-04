@@ -89,22 +89,22 @@ public class LinkedListTest {
     }
 
     @Test
-    public void testInsertBeforeValue() {
+    public void testInsertBefore() {
         LinkedList testList = new LinkedList();
         testList.insert(53);
         testList.insert(5);
-        testList.insertBeforeValue(53, 4);
+        testList.insertBefore(53, 4);
         assertEquals("5 should remain at the beginning of the list after 4 is inserted", 5, testList.head.value);
         assertEquals("4 should be placed in the middle of the list after 5", 4, testList.head.next.value);
         assertEquals("53 should remain at the end of the list after 4 is inserted", 53, testList.head.next.next.value);
     }
 
     @Test
-    public void testInsertAfterValue() {
+    public void testInsertAfter() {
         LinkedList testList = new LinkedList();
         testList.insert(53);
         testList.insert(5);
-        testList.insertAfterValue(5, 4);
+        testList.insertAfter(5, 4);
         assertEquals("5 should remain at the beginning of the list after 4 is inserted", 5, testList.head.value);
         assertEquals("4 should be placed in the middle of the list after 5", 4, testList.head.next.value);
         assertEquals("53 should remain at the end of the list after 4 is inserted.", 53, testList.head.next.next.value);
