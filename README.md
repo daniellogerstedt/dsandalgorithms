@@ -96,3 +96,23 @@ InsertAfter iterates through the list stopping on the first node with a given va
 ![solution image](./assets/insertBeforeValue.jpg)
 
 ![solution image](./assets/insertAfterValue.jpg)
+
+
+##December 5th: Linked List K From End.
+
+### Challenge
+Implement a method that will find a value of a node K places from the end of the linked list.
+
+### Approach & Efficiency
+First the method iterates over the linked list counting the number of nodes
+then it creates an array of that count in length
+then it iterates over the linked list putting the values into the array starting at the end. it does this by using the count and decrementing it as it goes.
+then it returns the value at index k of the array containing the values backward.
+
+This approach is Big O(n^2) for Time and Big O(n) for Space. 
+It could be optimized by removing the array and subtracting k from count then finding the node when count = 0 the second time through. 
+This was discovered mid whiteboard but we went with the original design
+
+### Solution
+![solution image](./assets/kFromEnd.jpg)
+
