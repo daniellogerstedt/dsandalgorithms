@@ -57,4 +57,21 @@ public class LinkedList {
         }
         currentNode.next = new Node(newValue, currentNode.next);
     }
+
+    public int kFromEnd (int k) {
+        int count = 0;
+        Node curr = this.head;
+        while (curr != null) {
+            count++;
+            curr = curr.next;
+        }
+        int[] values = new int[count];
+        curr = this.head;
+        while (curr != null) {
+            count--;
+            values[count] = curr.value;
+            curr = curr.next;
+        }
+        return values[k];
+    }
 }

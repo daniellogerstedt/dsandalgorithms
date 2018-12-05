@@ -109,4 +109,15 @@ public class LinkedListTest {
         assertEquals("4 should be placed in the middle of the list after 5", 4, testList.head.next.value);
         assertEquals("53 should remain at the end of the list after 4 is inserted.", 53, testList.head.next.next.value);
     }
+
+    @Test
+    public void testKFromEnd() {
+        LinkedList testList = new LinkedList();
+        testList.insert(5);
+        testList.insert(4);
+        testList.insert(42);
+        testList.insert(53);
+        assertEquals("Should find the value 4 for the 1st from the end", 4, testList.kFromEnd(1));
+        assertEquals("Should find the value 42 for the 2nd from the end", 42, testList.kFromEnd(2));
+    }
 }
