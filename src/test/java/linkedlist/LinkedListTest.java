@@ -120,4 +120,49 @@ public class LinkedListTest {
         assertEquals("Should find the value 4 for the 1st from the end", 4, testList.kFromEnd(1));
         assertEquals("Should find the value 42 for the 2nd from the end", 42, testList.kFromEnd(2));
     }
+
+    @Test
+    public void testALongerMerge() {
+        LinkedList testListA = new LinkedList();
+        testListA.insert(2);
+        testListA.insert(2);
+        LinkedList testListB = new LinkedList();
+        testListB.insert(1);
+        LinkedList.merge(testListA, testListB);
+        assertEquals("should properly merge lists", 1, testListA.head.next.value);
+    }
+
+    @Test
+    public void testBLongerMerge() {
+        LinkedList testListA = new LinkedList();
+        testListA.insert(2);
+        LinkedList testListB = new LinkedList();
+        testListB.insert(1);
+        testListB.insert(1);
+        LinkedList.merge(testListA, testListB);
+        assertEquals("should properly merge lists", 1, testListA.head.next.value);
+    }
+
+    @Test
+    public void testSameMerge() {
+        LinkedList testListA = new LinkedList();
+        testListA.insert(2);
+        testListA.insert(2);
+        LinkedList testListB = new LinkedList();
+        testListB.insert(1);
+        testListB.insert(1);
+        LinkedList.merge(testListA, testListB);
+        assertEquals("should properly merge lists", 1, testListA.head.next.value);
+    }
+
+    @Test
+    public void testEmptyMerge() {
+        LinkedList testListA = new LinkedList();
+        LinkedList testListB = new LinkedList();
+        LinkedList.merge(testListA, testListB);
+        assertEquals("should properly merge lists", 1, testListA.head.next.value);
+    }
+
+
+
 }

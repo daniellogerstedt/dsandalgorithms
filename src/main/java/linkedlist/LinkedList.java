@@ -78,13 +78,29 @@ public class LinkedList {
         return values[k];
     }
 
-    private static LinkedList merge(LinkedList One, LinkedList Two) {
+    public static LinkedList merge(LinkedList One, LinkedList Two) {
         Node currOne = One.head;
         Node currTwo = Two.head;
         Node nextOne;
         Node nextTwo;
         if (currOne != null) nextOne = currOne.next;
-        if (currOne != null) nextTwo = currTwo.next;
-        While (nextOne != null && nextTwo !)
+        else return Two;
+        if (currTwo != null) nextTwo = currTwo.next;
+        else return One;
+        while (nextOne != null && nextTwo != null) {
+            nextOne = currOne.next;
+            nextTwo = currTwo.next;
+            currOne.next = currTwo;
+            currTwo.next = nextOne;
+            currOne = nextOne;
+            currTwo = nextTwo;
+        }
+        if (nextOne == null && nextTwo == null) return One;
+        else if (nextOne == null) currOne.next = currTwo;
+        else if (nextTwo == null) {
+            currOne.next = currTwo;
+            currTwo.next = nextOne;
+        }
+        return One;
     }
 }
