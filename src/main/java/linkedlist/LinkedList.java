@@ -1,6 +1,9 @@
 package linkedlist;
 
+import com.sun.source.tree.DoWhileLoopTree;
+
 public class LinkedList {
+
     Node head;
     public LinkedList() {
         this.head = null;
@@ -73,5 +76,15 @@ public class LinkedList {
             curr = curr.next;
         }
         return values[k];
+    }
+
+    private static LinkedList merge(LinkedList One, LinkedList Two) {
+        Node currOne = One.head;
+        Node currTwo = Two.head;
+        Node nextOne;
+        Node nextTwo;
+        if (currOne != null) nextOne = currOne.next;
+        if (currOne != null) nextTwo = currTwo.next;
+        While (nextOne != null && nextTwo !)
     }
 }
