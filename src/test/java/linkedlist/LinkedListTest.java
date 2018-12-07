@@ -160,7 +160,27 @@ public class LinkedListTest {
         LinkedList testListA = new LinkedList();
         LinkedList testListB = new LinkedList();
         LinkedList.merge(testListA, testListB);
-        assertEquals("should properly merge lists", 1, testListA.head.next.value);
+        assertEquals("should properly merge lists", null, testListA.head);
+    }
+
+    @Test
+    public void testAEmptyMerge() {
+        LinkedList testListA = new LinkedList();
+        LinkedList testListB = new LinkedList();
+        testListB.insert(1);
+        Node headB = testListB.head;
+        LinkedList.merge(testListA, testListB);
+        assertEquals("should properly merge lists", headB, testListA.head);
+    }
+
+    @Test
+    public void testBEmptyMerge() {
+        LinkedList testListA = new LinkedList();
+        LinkedList testListB = new LinkedList();
+        testListA.insert(1);
+        Node headA = testListA.head;
+        LinkedList.merge(testListA, testListB);
+        assertEquals("should properly merge lists", headA, testListA.head);
     }
 
 

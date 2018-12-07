@@ -116,3 +116,16 @@ This was discovered mid whiteboard but we went with the original design
 ### Solution
 ![solution image](./assets/kFromEnd.jpg)
 
+
+##December 6th: Linked List Merge.
+
+### Challenge
+Implement a method that will take two Linked Lists and combines them into one linked list.
+
+### Approach & Efficiency
+Takes two Linked Lists takes zipper merges them placing each node from the second linked list after the corresponding node from the first linked list. 
+
+### Solution
+![solution image](./assets/mergepseudo.jpg)
+![solution image](./assets/merge.jpg)
+
