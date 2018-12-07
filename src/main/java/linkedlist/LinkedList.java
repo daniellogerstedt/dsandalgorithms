@@ -79,6 +79,12 @@ public class LinkedList {
     }
 
     public static LinkedList merge(LinkedList One, LinkedList Two) {
+        if (One.head == null) {
+            One.head = Two.head;
+            Two.head = null;
+            return One;
+        }
+        if (Two.head == null) return One;
         Node currOne = One.head;
         Node currTwo = Two.head;
         Node nextOne;
@@ -101,6 +107,7 @@ public class LinkedList {
             currOne.next = currTwo;
             currTwo.next = nextOne;
         }
+        Two.head = null;
         return One;
     }
 }
