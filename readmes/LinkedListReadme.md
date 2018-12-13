@@ -1,4 +1,4 @@
-##December 3rd: Linked Lists.
+## December 3rd: Linked Lists.
 
 ### Challenge
 Implement a Linked List with 3 methods: insert, includes, and print
@@ -18,7 +18,7 @@ If it finds a value matching the requested value it returns true, otherwise it r
 Printing the list starts at the head and sends the value of the node to the system out before setting the current node to the next node and repeating till the end.
 
 
-##December 4rd: Linked Lists.
+## December 4rd: Linked Lists.
 
 ### Challenge
 Implement a Linked List methods to append at the end, insert before node with a value, insert after a node with value.
@@ -36,16 +36,14 @@ It then places the new node between the previous node and the node found with th
 InsertAfter iterates through the list stopping on the first node with a given value. It then places the new node between the node found and the next node.
 
 ### Solution
-![solution image](../assets/appendLL.jpg)
+<img src="../assets/appendLL.jpg" height=500><img src="../assets/appendLL2.jpg" height=500>
 
-![solution image](../assets/appendLL2.jpg)
+<img src="../assets/insertBeforeValue.jpg" height=500>
 
-![solution image](../assets/insertBeforeValue.jpg)
-
-![solution image](../assets/insertAfterValue.jpg)
+<img src="../assets/insertAfterValue.jpg" height=500>
 
 
-##December 5th: Linked List K From End.
+## December 5th: Linked List K From End.
 
 ### Challenge
 Implement a method that will find a value of a node K places from the end of the linked list.
@@ -61,10 +59,10 @@ It could be optimized by removing the array and subtracting k from count then fi
 This was discovered mid whiteboard but we went with the original design
 
 ### Solution
-![solution image](../assets/kFromEnd.jpg)
+<img src="../assets/kFromEnd.jpg" height=500>
 
 
-##December 6th: Linked List Merge.
+## December 6th: Linked List Merge.
 
 ### Challenge
 Implement a method that will take two Linked Lists and combines them into one linked list.
@@ -73,6 +71,7 @@ Implement a method that will take two Linked Lists and combines them into one li
 Takes two Linked Lists takes zipper merges them placing each node from the second linked list after the corresponding node from the first linked list. 
 
 ### Solution
-![solution image](../assets/mergepseudo.jpg)
-![solution image](../assets/merge.jpg)
+<img src="../assets/mergepseudo.jpg" height=500>
+
+<img src="../assets/merge.jpg" height=500>
 
