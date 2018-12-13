@@ -1,4 +1,4 @@
-package QueueWithStacks;
+package queueswithstacks;
 
 public class QueueWithStacks<T> {
 

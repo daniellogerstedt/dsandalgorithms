@@ -1,6 +1,4 @@
-#Data Structures and Algorithms Problems:
-
-##November 26th: Reverse an array.
+## November 26th: Reverse an array.
 
 ### Challenge
 Reverse an array.
@@ -13,9 +11,9 @@ It also only loops half of the length. Where n is the size of the array and time
 
 ### Solution
 
-![solution image](../assets/reverseArray.jpg)
+<img src="../assets/reverseArray.jpg" height=500>
 
-##November 27th: Add a number to an array.
+## November 27th: Add a number to an array.
 
 ### Challenge
 Add a number to an array.
@@ -27,12 +25,12 @@ This approach is Big O(n) for space and O(n) for time because it creates a dupli
 
 ### Solution
 
-![solution image](../assets/insertNumberPseudo.jpg)
+<img src="../assets/insertNumberPseudo.jpg" height=500>
 
-![solution image](../assets/insertNumberCode.jpg)
+<img src="../assets/insertNumberCode.jpg" height=500>
 
 
-##November 28th: Binary Search of an Array.
+## November 28th: Binary Search of an Array.
 
 ### Challenge
 Binary Search of an Array
@@ -46,4 +44,4 @@ The time used can be calculated on a logarithmic curve.
 
 ### Solution
 
-![solution image](../assets/array_binary_search.jpg)
+<img src="../assets/array_binary_search.jpg" height=500>

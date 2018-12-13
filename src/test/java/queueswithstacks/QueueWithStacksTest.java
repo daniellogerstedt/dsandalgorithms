@@ -1,4 +1,4 @@
-package QueueWithStacks;
+package queueswithstacks;
 
 import org.junit.Test;
 
@@ -7,7 +7,6 @@ import static junit.framework.TestCase.assertNotNull;
 import static junit.framework.TestCase.assertNotSame;
 import static junit.framework.TestCase.assertNull;
 import static junit.framework.TestCase.assertTrue;
-import static org.junit.Assert.*;
 
 public class QueueWithStacksTest {
 
