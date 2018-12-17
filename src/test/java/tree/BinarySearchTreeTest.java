@@ -31,6 +31,8 @@ public class BinarySearchTreeTest {
         assertNull(testBinary.root.right.left);
         assertNull(testBinary.root.right.right);
         assertEquals(15, testBinary.root.right.value);
+        testBinary.add(10);
+        assertEquals(3, testBinary.inOrderList().size());
     }
 
     @Test

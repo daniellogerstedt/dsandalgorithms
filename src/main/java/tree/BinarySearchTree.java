@@ -15,13 +15,13 @@ public class BinarySearchTree extends Tree {
                         return;
                     }
                     else curr = curr.right;
-                }if ((int)curr.value > v) {
+                } else if ((int)curr.value > v) {
                     if (curr.left == null) {
                         curr.left = new Node<>(v);
                         return;
                     }
                     else curr = curr.left;
-                }
+                } else return;
             }
         }
     }
