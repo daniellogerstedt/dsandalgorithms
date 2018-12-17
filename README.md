@@ -8,3 +8,4 @@
 ### [Queue with Stacks](readmes/QueueWithStacksReadme.md)
 ### [FIFO Animal Shelter](readmes/FIFOAnimalShelter.md)
 ### [Multi Bracket Validation](readmes/MultiBracketValidation.md)
+### [Trees](readmes/Trees.md)
