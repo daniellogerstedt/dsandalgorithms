@@ -9,3 +9,4 @@
 ### [FIFO Animal Shelter](readmes/FIFOAnimalShelter.md)
 ### [Multi Bracket Validation](readmes/MultiBracketValidation.md)
 ### [Trees](readmes/Trees.md)
+### [FizzBuzzTree](readmes/FizzBuzzTree.md)
