@@ -1,18 +1,18 @@
 package stacksandqueues;
 
-public class Stack {
-    protected Node top;
+public class Stack<T> {
+    protected Node<T> top;
 
     public Stack() {
         this.top = null;
     }
 
-    public Integer peek() {
+    public T peek() {
         if(this.top == null) return null;
         return this.top.value;
     }
 
-    public void push(int v) {
+    public void push(T v) {
         Node node = new Node(v, this.top);
         this.top = node;
     }
