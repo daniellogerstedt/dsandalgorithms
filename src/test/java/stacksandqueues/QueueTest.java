@@ -28,7 +28,7 @@ public class QueueTest {
         assertNull("peek should return null on an empty Queue", testQueue.peek());
         testQueue.enqueue(1);
         Node testNode = testQueue.front;
-        assertTrue("front value should be 1 and peek should return that 1", testQueue.peek() == 1);
+        assertTrue("front value should be 1 and peek should return that 1", (int)testQueue.peek() == 1);
         assertNotNull("front should still remain after peeking", testQueue.front);
         assertEquals("Node at front should not change from peek", testNode, testQueue.front);
     }
@@ -40,7 +40,7 @@ public class QueueTest {
         testQueue.enqueue(2);
         Node testNode = testQueue.front;
         Node dequeuedNode = testQueue.dequeue();
-        assertTrue("front value should be 2", testQueue.peek() == 2);
+        assertTrue("front value should be 2", (int)testQueue.peek() == 2);
         assertEquals("Should be previous front that was popped", testNode, dequeuedNode);
         assertNotSame("Node at front should not be previous front", dequeuedNode, testQueue.front);
     }

@@ -1,20 +1,20 @@
 package stacksandqueues;
 
-public class Queue {
-    protected Node front;
-    protected Node back;
+public class Queue<T> {
+    protected Node<T> front;
+    protected Node<T> back;
     public Queue() {
         this.front = null;
         this.back = null;
     }
 
-    public Integer peek() {
+    public T peek() {
         if (this.front == null) return null;
         return this.front.value;
     }
 
-    public void enqueue(int v) {
-        Node node = new Node(v);
+    public void enqueue(T v) {
+        Node<T> node = new Node<>(v);
         if (this.front == null) {
          this.front = node;
          this.back = node;
@@ -25,6 +25,7 @@ public class Queue {
     }
 
     public Node dequeue() {
+        if (this.front == null) return null;
         Node node = this.front;
         this.front = this.front.next;
         return node;

@@ -1,4 +1,4 @@
-## December 17th: Trees.
+## December 18th: Fizz Buzz Trees.
 
 ### Challenge
 Implement a method that traverses a tree of objects and changes any values that are divisible by 3 to "Fizz", divisible by 5 to "Buzz" and divisible by both to "FizzBuzz"

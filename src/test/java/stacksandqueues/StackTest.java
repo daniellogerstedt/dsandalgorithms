@@ -28,7 +28,7 @@ public class StackTest {
         assertNull("peek should return null on an empty stack", testStack.peek());
         testStack.push(1);
         Node testNode = testStack.top;
-        assertTrue("top value should be 1 and peek should return that 1", testStack.peek() == 1);
+        assertTrue("top value should be 1 and peek should return that 1", (int)testStack.peek() == 1);
         assertNotNull("top should still remain after peeking", testStack.top);
         assertEquals("Node at top should not change from peek", testNode, testStack.top);
     }
@@ -39,9 +39,9 @@ public class StackTest {
         testStack.push(1);
         testStack.push(2);
         Node testNode = testStack.top;
-        assertTrue("top value should be 2", testStack.peek() == 2);
+        assertTrue("top value should be 2", (int)testStack.peek() == 2);
         Node poppedNode = testStack.pop();
-        assertTrue("top value should be 1", testStack.peek() == 1);
+        assertTrue("top value should be 1", (int)testStack.peek() == 1);
         assertEquals("Should be previous top that was popped", testNode, poppedNode);
         assertNotSame("Node at top should not be previous top", poppedNode, testStack.top);
     }
