@@ -11,3 +11,4 @@
 ### [Trees](readmes/Trees.md)
 ### [FizzBuzzTree](readmes/FizzBuzzTree.md)
 ### [BreadthFirstTraversal](readmes/BreadthFirstTraversal.md)
+### [FindMaxTree](readmes/FindMaxTree.md)
