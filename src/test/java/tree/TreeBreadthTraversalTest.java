@@ -37,6 +37,8 @@ public class TreeBreadthTraversalTest {
 
         // Test Empty Tree
         assertEquals("", outContent.toString());
+
+        // Add Nodes
         testTree.root = new Node<>(1);
         testTree.root.left = new Node<>(2);
         testTree.root.left.left = new Node<>(4);
@@ -44,6 +46,8 @@ public class TreeBreadthTraversalTest {
 
         // Test Lopsided Tree
         assertEquals("1\n2\n4\n", outContent.toString());
+
+        // Add More Nodes
         testTree.root.right = new Node<>(3);
         testTree.root.left.right = new Node<>(5);
         testTree.root.right.left = new Node<>(6);
