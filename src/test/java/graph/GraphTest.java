@@ -2,6 +2,8 @@ package graph;
 
 import org.junit.Test;
 
+import java.util.List;
+
 import static org.junit.Assert.*;
 
 public class GraphTest {
@@ -99,5 +101,30 @@ public class GraphTest {
         testGraph.addVertex("Test Vertex Two");
 
         assertEquals(2, testGraph.size());
+    }
+
+
+    @Test
+    public void breadthFirst() {
+        Graph<String> testGraph = new Graph<>();
+        Graph.Vertex nodeOne = testGraph.addVertex("Test Vertex One");
+        Graph.Vertex nodeTwo = testGraph.addVertex("Test Vertex Two");
+        Graph.Vertex nodeThree = testGraph.addVertex("Test Vertex Three");
+        Graph.Vertex nodeFour = testGraph.addVertex("Test Vertex Four");
+        Graph.Vertex nodeFive = testGraph.addVertex("Test Vertex Five");
+        Graph.Vertex nodeSix = testGraph.addVertex("Test Vertex Six : Not Connected");
+        testGraph.addEdge(nodeOne, nodeTwo);
+        testGraph.addEdge(nodeOne, nodeThree);
+        testGraph.addEdge(nodeOne, nodeFour);
+        testGraph.addEdge(nodeTwo, nodeThree);
+        testGraph.addEdge(nodeFour, nodeFive);
+        List<Graph.Vertex> testBF = testGraph.breadthFirst(nodeOne);
+        assertEquals(5, testBF.size());
+        assertTrue(testBF.contains(nodeOne));
+        assertTrue(testBF.contains(nodeTwo));
+        assertTrue(testBF.contains(nodeThree));
+        assertTrue(testBF.contains(nodeFour));
+        assertTrue(testBF.contains(nodeFive));
+        assertTrue(!testBF.contains(nodeSix));
     }
 }

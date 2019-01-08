@@ -43,3 +43,11 @@ This method is O(1) for Time and Space
 This method returns the size of the set of vertex present on the instance of the graph.
 
 This method is O(1) for Time and Space
+
+#### Breadth First (breadthFirst)
+This method takes in a vertex then traverses the tree outward from there. First it enqueues the provided node then it adds it to an arraylist to track what has been seen.
+It then starts a loop that will run until the Queue is empty, inside this loop it first sets the current vertex by dequeueing the first vertex in the queue. It then loops through the neighbors of the current vertex and checks if they have been seen, if not it places them in the list and enqueues them. It continues till all vertex that are attached to the provided vertex have been seen and the queue empties. Any vertex in the graph not connected to the provided vertex are never traversed.
+
+This method is O(N<sup>2</sup>) for Time and Space
+
+<img src="../assets/BreadthFirstGraph.jpg" height=500>
