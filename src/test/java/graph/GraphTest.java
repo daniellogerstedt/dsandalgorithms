@@ -18,10 +18,8 @@ public class GraphTest {
     @Test
     public void testAddEdge() {
         Graph<String> testGraph = new Graph<>();
-        testGraph.addVertex("Test Vertex One");
-        testGraph.addVertex("Test Vertex Two");
-        Graph.Vertex nodeOne = testGraph.getVertices().toArray(new Graph.Vertex[testGraph.size()])[1];
-        Graph.Vertex nodeTwo = testGraph.getVertices().toArray(new Graph.Vertex[testGraph.size()])[0];
+        Graph.Vertex nodeOne = testGraph.addVertex("Test Vertex One");
+        Graph.Vertex nodeTwo = testGraph.addVertex("Test Vertex Two");
         testGraph.addEdge(nodeOne, nodeTwo);
         assertEquals(1, nodeOne.neighbors.size());
         assertEquals(1, nodeTwo.neighbors.size());
@@ -40,10 +38,8 @@ public class GraphTest {
     @Test
     public void testAddWeightedEdge() {
         Graph<String> testGraph = new Graph<>();
-        testGraph.addVertex("Test Vertex One");
-        testGraph.addVertex("Test Vertex Two");
-        Graph.Vertex nodeOne = testGraph.getVertices().toArray(new Graph.Vertex[testGraph.size()])[1];
-        Graph.Vertex nodeTwo = testGraph.getVertices().toArray(new Graph.Vertex[testGraph.size()])[0];
+        Graph.Vertex nodeOne = testGraph.addVertex("Test Vertex One");
+        Graph.Vertex nodeTwo = testGraph.addVertex("Test Vertex Two");
         testGraph.addEdge(nodeOne, nodeTwo, 0.5);
         assertEquals(1, nodeOne.neighbors.size());
         assertEquals(1, nodeTwo.neighbors.size());
@@ -73,10 +69,8 @@ public class GraphTest {
     @Test
     public void testGetNeighbors() {
         Graph<String> testGraph = new Graph<>();
-        testGraph.addVertex("Test Vertex One");
-        testGraph.addVertex("Test Vertex Two");
-        Graph.Vertex nodeOne = testGraph.getVertices().toArray(new Graph.Vertex[testGraph.size()])[0];
-        Graph.Vertex nodeTwo = testGraph.getVertices().toArray(new Graph.Vertex[testGraph.size()])[1];
+        Graph.Vertex nodeOne = testGraph.addVertex("Test Vertex One");
+        Graph.Vertex nodeTwo = testGraph.addVertex("Test Vertex Two");
         testGraph.addEdge(nodeOne, nodeTwo);
 
         // Check for neighbors of One and Two has size of 1.

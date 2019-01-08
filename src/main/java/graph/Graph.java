@@ -61,8 +61,11 @@ public class Graph<T> {
 
 
     // Adds a Vertex to the graph using the data value provided.
-    public void addVertex (T data) {
-        this.vertices.add(new Vertex<T>(data));
+    public Vertex<T> addVertex (T data) {
+        Vertex<T> v = new Vertex<T>(data);
+        this.vertices.add(v);
+        return v;
+
     }
 
     // Adds an Edge between two Vertex with a default weight of 1.
