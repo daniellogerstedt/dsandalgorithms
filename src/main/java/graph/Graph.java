@@ -27,11 +27,11 @@ public class Graph<T> {
 
         protected T data;
 
-        protected Set<Edge> neighbors;
+        protected Set<Edge<T>> neighbors;
 
         protected Vertex (T data) {
             this.data = data;
-            this.neighbors = new HashSet<Edge>();
+            this.neighbors = new HashSet<Edge<T>>();
         }
 
         public T getData () {
@@ -40,20 +40,34 @@ public class Graph<T> {
 
     }
     // Edge class that holds information on which Node is a neighbor of the Node it points from. It also contains a weight value that is a double.
-    protected class Edge {
+    protected class Edge<T> {
 
-        protected Vertex toward;
+        protected Vertex<T> toward;
 
-        protected double weight;
+        protected int weight;
 
-        protected Edge (Vertex v, double w) {
+        protected Edge (Vertex<T> v, int w) {
             this.toward = v;
             this.weight = w;
         }
 
-        protected Edge (Vertex v) {
+        protected Edge (Vertex<T> v) {
             this.toward = v;
-            this.weight = 1.0;
+            this.weight = 1;
+        }
+
+    }
+
+    // This was the only way I could think to return two values at once, and it was to return an instance of a private class containing the information. Built for code challenge #27.
+    protected class EdgeCost {
+
+        protected boolean possible;
+
+        protected int cost;
+
+        protected EdgeCost(boolean p, int c) {
+            this.possible = p;
+            this.cost = c;
         }
 
     }
@@ -73,15 +87,15 @@ public class Graph<T> {
     }
 
     // Adds an Edge between two Vertex with a default weight of 1.
-    public void addEdge (Vertex to, Vertex from) {
-        from.neighbors.add(new Edge(to));
-        to.neighbors.add(new Edge(from));
+    public void addEdge (Vertex<T> to, Vertex<T> from) {
+        from.neighbors.add(new Edge<T>(to));
+        to.neighbors.add(new Edge<T>(from));
     }
 
     // Adds an Edge between two Vertex with a provided weight.
-    public void addEdge (Vertex to, Vertex from, double w) {
-        from.neighbors.add(new Edge(to, w));
-        to.neighbors.add(new Edge(from, w));
+    public void addEdge (Vertex<T> to, Vertex<T> from, int w) {
+        from.neighbors.add(new Edge<T>(to, w));
+        to.neighbors.add(new Edge<T>(from, w));
     }
 
     // Gets the set of all Vertex in the graph.
@@ -115,4 +129,29 @@ public class Graph<T> {
         }
         return vList;
     }
+
+    public EdgeCost getEdges (ArrayList<Vertex<T>> vList) {
+        int index = 0;
+        int total = 0;
+        boolean possible = true;
+        Vertex<T> current = vList.get(index);
+        while(possible && index != (vList.size() - 1)) {
+            index++;
+            for (Edge<T> neighbor : current.neighbors) {
+                if (neighbor.toward == vList.get(index)) {
+                    total += neighbor.weight;
+                    current = vList.get(index);
+                    break;
+                }
+            }
+            if (current != vList.get(index)) {
+                possible = false;
+                total = 0;
+            }
+        }
+        return new EdgeCost(possible, total);
+    }
+
+
+
 }

@@ -2,6 +2,7 @@ package graph;
 
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.Assert.*;
@@ -29,12 +30,12 @@ public class GraphTest {
         // Check Vertex One for Neighbors
         Object[] neighborsOne = nodeOne.neighbors.toArray();
         assertEquals("Test Vertex Two", ((Graph.Edge)neighborsOne[0]).toward.data);
-        assertTrue(((Graph.Edge)neighborsOne[0]).weight == 1.0);
+        assertTrue(((Graph.Edge)neighborsOne[0]).weight == 1);
 
         // Check Vertex Two for Neighbors
         Object[] neighborsTwo = nodeTwo.neighbors.toArray();
         assertEquals("Test Vertex One", ((Graph.Edge)neighborsTwo[0]).toward.data);
-        assertTrue(((Graph.Edge)neighborsTwo[0]).weight == 1.0);
+        assertTrue(((Graph.Edge)neighborsTwo[0]).weight == 1);
     }
 
     @Test
@@ -42,19 +43,19 @@ public class GraphTest {
         Graph<String> testGraph = new Graph<>();
         Graph.Vertex nodeOne = testGraph.addVertex("Test Vertex One");
         Graph.Vertex nodeTwo = testGraph.addVertex("Test Vertex Two");
-        testGraph.addEdge(nodeOne, nodeTwo, 0.5);
+        testGraph.addEdge(nodeOne, nodeTwo, 2);
         assertEquals(1, nodeOne.neighbors.size());
         assertEquals(1, nodeTwo.neighbors.size());
 
         // Check Vertex One for Neighbors
         Object[] neighborsOne = nodeOne.neighbors.toArray();
         assertEquals("Test Vertex Two", ((Graph.Edge)neighborsOne[0]).toward.data);
-        assertTrue(((Graph.Edge)neighborsOne[0]).weight == 0.5);
+        assertTrue(((Graph.Edge)neighborsOne[0]).weight == 2);
 
         // Check Vertex Two for Neighbors
         Object[] neighborsTwo = nodeTwo.neighbors.toArray();
         assertEquals("Test Vertex One", ((Graph.Edge)neighborsTwo[0]).toward.data);
-        assertTrue(((Graph.Edge)neighborsTwo[0]).weight == 0.5);
+        assertTrue(((Graph.Edge)neighborsTwo[0]).weight == 2);
     }
 
     @Test
@@ -82,12 +83,12 @@ public class GraphTest {
         // Check Vertex One for Neighbors
         Object[] neighborsOne = testGraph.getNeighbors(nodeOne).toArray();
         assertEquals("Test Vertex Two", ((Graph.Edge)neighborsOne[0]).toward.data);
-        assertTrue(((Graph.Edge)neighborsOne[0]).weight == 1.0);
+        assertTrue(((Graph.Edge)neighborsOne[0]).weight == 1);
 
         // Check Vertex Two for Neighbors
         Object[] neighborsTwo = testGraph.getNeighbors(nodeTwo).toArray();
         assertEquals("Test Vertex One", ((Graph.Edge)neighborsTwo[0]).toward.data);
-        assertTrue(((Graph.Edge)neighborsTwo[0]).weight == 1.0);
+        assertTrue(((Graph.Edge)neighborsTwo[0]).weight == 1);
 
     }
 
@@ -105,7 +106,7 @@ public class GraphTest {
 
 
     @Test
-    public void breadthFirst() {
+    public void testBreadthFirst() {
         Graph<String> testGraph = new Graph<>();
         Graph.Vertex nodeOne = testGraph.addVertex("Test Vertex One");
         Graph.Vertex nodeTwo = testGraph.addVertex("Test Vertex Two");
@@ -126,5 +127,46 @@ public class GraphTest {
         assertTrue(testBF.contains(nodeFour));
         assertTrue(testBF.contains(nodeFive));
         assertTrue(!testBF.contains(nodeSix));
+    }
+
+    @Test
+    public void testGetEdges() {
+        Graph<String> testGraph = new Graph<>();
+        Graph.Vertex aNode = testGraph.addVertex("A");
+        Graph.Vertex bNode = testGraph.addVertex("B");
+        Graph.Vertex cNode = testGraph.addVertex("C");
+        Graph.Vertex dNode = testGraph.addVertex("D");
+        Graph.Vertex eNode = testGraph.addVertex("E");
+        Graph.Vertex fNode = testGraph.addVertex("F");
+        testGraph.addEdge(cNode, aNode, 1);
+        testGraph.addEdge(cNode, bNode, 1);
+        testGraph.addEdge(cNode, dNode, 1);
+        testGraph.addEdge(cNode, eNode, 1);
+        testGraph.addEdge(cNode, fNode, 1);
+        testGraph.addEdge(aNode, bNode, 1);
+        testGraph.addEdge(bNode, dNode, 1);
+        testGraph.addEdge(dNode, fNode, 1);
+        testGraph.addEdge(eNode, fNode, 1);
+        ArrayList<Graph<String>.Vertex<String>> vListOne = new ArrayList<>();
+        ArrayList<Graph<String>.Vertex<String>> vListTwo = new ArrayList<>();
+        vListOne.add(aNode);
+        vListOne.add(bNode);
+        vListOne.add(cNode);
+        vListOne.add(dNode);
+        vListTwo.add(fNode);
+        vListTwo.add(cNode);
+        vListTwo.add(eNode);
+        vListTwo.add(dNode);
+        Graph.EdgeCost answerOne = testGraph.getEdges(vListOne);
+        Graph.EdgeCost answerTwo = testGraph.getEdges(vListTwo);
+
+        // Assertions
+
+        assertEquals(3, answerOne.cost);
+        assertTrue(answerOne.possible);
+        assertEquals(0, answerTwo.cost);
+        assertFalse(answerTwo.possible);
+
+
     }
 }
