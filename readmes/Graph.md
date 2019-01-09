@@ -48,6 +48,13 @@ This method is O(1) for Time and Space
 This method takes in a vertex then traverses the tree outward from there. First it enqueues the provided node then it adds it to an arraylist to track what has been seen.
 It then starts a loop that will run until the Queue is empty, inside this loop it first sets the current vertex by dequeueing the first vertex in the queue. It then loops through the neighbors of the current vertex and checks if they have been seen, if not it places them in the list and enqueues them. It continues till all vertex that are attached to the provided vertex have been seen and the queue empties. Any vertex in the graph not connected to the provided vertex are never traversed.
 
-This method is O(N<sup>2</sup>) for Time and Space
+This method is O(N<sup>2</sup>) for Time and O(N) Space
 
 <img src="../assets/BreadthFirstGraph.jpg" height=500>
+
+#### Get Edges (getEdges)
+This method takes in an arraylist of vertex, it then starts at the first vertex and determines whether there is a path from one vertex to the next through the entire list, and calculates the "cost" of the edges for each hop as a total. It does this by keeping a running total and boolean to track whether the connections exist and what the total is.
+
+This method is O(N<sup>2</sup>) Time and O(1) Space
+
+<img src="../assets/GetEdges.jpg" height=500>
