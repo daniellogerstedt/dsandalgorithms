@@ -169,4 +169,27 @@ public class GraphTest {
 
 
     }
+
+    @Test
+    public void testDepthFirst() {
+        Graph<String> testGraph = new Graph<>();
+        Graph.Vertex aNode = testGraph.addVertex("A");
+        Graph.Vertex bNode = testGraph.addVertex("B");
+        Graph.Vertex cNode = testGraph.addVertex("C");
+        Graph.Vertex dNode = testGraph.addVertex("D");
+        Graph.Vertex eNode = testGraph.addVertex("E");
+        Graph.Vertex fNode = testGraph.addVertex("F");
+        testGraph.addEdge(cNode, aNode, 1);
+        testGraph.addEdge(cNode, bNode, 1);
+        testGraph.addEdge(cNode, dNode, 1);
+        testGraph.addEdge(cNode, eNode, 1);
+        testGraph.addEdge(cNode, fNode, 1);
+        testGraph.addEdge(aNode, bNode, 1);
+        testGraph.addEdge(bNode, dNode, 1);
+        testGraph.addEdge(dNode, fNode, 1);
+        testGraph.addEdge(eNode, fNode, 1);
+        System.out.println("run depth first");
+        List<Graph.Vertex> testDF = testGraph.depthFirst(cNode);
+        assertEquals("C", testDF.get(6));
+    }
 }

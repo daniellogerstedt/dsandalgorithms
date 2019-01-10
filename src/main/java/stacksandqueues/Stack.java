@@ -23,4 +23,13 @@ public class Stack<T> {
         return node;
     }
 
+    public boolean contains(T data) {
+        Node curr = this.top;
+        while (curr != null) {
+            if (curr.value == data) return true;
+            curr = curr.next;
+        }
+        return false;
+    }
+
 }

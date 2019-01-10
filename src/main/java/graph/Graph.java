@@ -1,6 +1,7 @@
 package graph;
 
 import stacksandqueues.Queue;
+import stacksandqueues.Stack;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -152,6 +153,26 @@ public class Graph<T> {
         return new EdgeCost(possible, total);
     }
 
-
+    public List<Vertex<T>> depthFirst (Vertex<T> v) {
+        Stack<Vertex<T>> depthStack = new Stack<>();
+        Vertex<T> currentVertex = v;
+        List<Vertex<T>> vList = new ArrayList<>();
+        do {
+            System.out.println("doin the while loop");
+            if (currentVertex.neighbors.size() != 1) {
+                for (Edge<T> neighbor : currentVertex.neighbors) {
+                    if (!vList.contains(neighbor.toward) && !depthStack.contains(neighbor.toward)) {
+                        depthStack.push(currentVertex);
+                        currentVertex = neighbor.toward;
+                        break;
+                    }
+                }
+            } else {
+                vList.add(currentVertex);
+                currentVertex = (Vertex<T>) depthStack.pop().value;
+            }
+        } while (depthStack.peek() != null);
+        return vList;
+    }
 
 }
