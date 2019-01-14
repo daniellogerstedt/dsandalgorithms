@@ -13,3 +13,4 @@
 ### [BreadthFirstTraversal](readmes/BreadthFirstTraversal.md)
 ### [FindMaxTree](readmes/FindMaxTree.md)
 ### [Graph](readmes/Graph.md)
+### [Hash Table](readmes/HashTable.md)
