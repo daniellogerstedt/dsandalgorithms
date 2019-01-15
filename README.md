@@ -14,3 +14,4 @@
 ### [FindMaxTree](readmes/FindMaxTree.md)
 ### [Graph](readmes/Graph.md)
 ### [Hash Table](readmes/HashTable.md)
+### [Repeated Word](readmes/RepeatedWord.md)

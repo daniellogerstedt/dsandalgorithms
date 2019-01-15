@@ -52,6 +52,7 @@ public class HashTable<T> {
 
     public boolean contains (String key) {
         int hash = getHash(key);
+        if (this.buckets[hash] == null) return false;
         DataNode[] data = new DataNode[this.buckets[hash].size()];
         for (DataNode d : this.buckets[hash].toArray(data)) {
             if (d.key.equals(key)) return true;
