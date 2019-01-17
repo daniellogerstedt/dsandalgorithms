@@ -2,6 +2,8 @@ package hashtable;
 
 import org.junit.Test;
 
+import java.util.List;
+
 import static org.junit.Assert.*;
 
 public class HashTableTest {
@@ -65,5 +67,33 @@ public class HashTableTest {
         assertTrue(testTable.contains("CARS"));
         assertTrue(testTable.contains("SCAR"));
         assertTrue(testTable.contains("RACS"));
+    }
+
+    @Test
+    public void leftJoin() {
+        HashTable<String> testTableOne = new HashTable<>();
+        testTableOne.add("TestDataOne", "One");
+        testTableOne.add("TestDataTwo", "Two");
+        testTableOne.add("TestDataThree", "Three");
+        HashTable<String> testTableTwo = new HashTable<>();
+        testTableTwo.add("TestDataOne", "One Isn't Null");
+        testTableTwo.add("TestDataThree", "Three Isn't Null");
+        testTableTwo.add("TestDataMissing", "This Shouldn't Join");
+        List<List> testJoin = HashTable.leftJoin(testTableOne, testTableTwo);
+
+        assertEquals("TestDataTwo", testJoin.get(0).get(0));
+        assertEquals("Two", testJoin.get(0).get(1));
+        assertNull(testJoin.get(0).get(2));
+
+        assertEquals("TestDataOne", testJoin.get(1).get(0));
+        assertEquals("One", testJoin.get(1).get(1));
+        assertEquals("One Isn't Null", testJoin.get(1).get(2));
+
+        assertEquals("TestDataThree", testJoin.get(2).get(0));
+        assertEquals("Three", testJoin.get(2).get(1));
+        assertEquals("Three Isn't Null", testJoin.get(2).get(2));
+
+        assertEquals(3, testJoin.size());
+
     }
 }
