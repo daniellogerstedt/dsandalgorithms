@@ -16,3 +16,4 @@
 ### [Hash Table](readmes/HashTable.md)
 ### [Repeated Word](readmes/RepeatedWord.md)
 ### [Tree Intersection](readmes/TreeIntersection.md)
+### [Insertion Sort](readmes/InsertionSort.md)
