@@ -17,3 +17,4 @@
 ### [Repeated Word](readmes/RepeatedWord.md)
 ### [Tree Intersection](readmes/TreeIntersection.md)
 ### [Insertion Sort](readmes/InsertionSort.md)
+### [Merge Sort](readmes/MergeSort.md)
