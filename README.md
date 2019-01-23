@@ -18,3 +18,4 @@
 ### [Tree Intersection](readmes/TreeIntersection.md)
 ### [Insertion Sort](readmes/InsertionSort.md)
 ### [Merge Sort](readmes/MergeSort.md)
+### [Quick Sort](readmes/QuickSort.md)
