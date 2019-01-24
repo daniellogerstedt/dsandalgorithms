@@ -19,3 +19,4 @@
 ### [Insertion Sort](readmes/InsertionSort.md)
 ### [Merge Sort](readmes/MergeSort.md)
 ### [Quick Sort](readmes/QuickSort.md)
+### [Radix Sort](readmes/RadixSort.md)
